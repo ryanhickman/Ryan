@@ -1,0 +1,108 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[3]:
+
+
+import pandas as pd
+
+Location = "datasets/axisdata.csv"
+df = pd.read_csv(Location)
+df.head()
+
+
+# In[5]:
+
+
+df['Cars Sold'].mean()
+
+
+# In[6]:
+
+
+df['Cars Sold'].min()
+
+
+# In[7]:
+
+
+df['Cars Sold'].max()
+
+
+# In[11]:
+
+
+pd.pivot_table(df, values=['Cars Sold'], index =['Gender'])
+
+
+# In[12]:
+
+
+df[df['Cars Sold']>3]['Hours Worked'].mean()
+
+
+# In[14]:
+
+
+df['Years Experience'].mean()
+
+
+# In[15]:
+
+
+df[df['Cars Sold']>3]['Years Experience'].mean()
+
+
+# In[17]:
+
+
+pd.pivot_table(df, values=['Cars Sold'], index=['SalesTraining'])
+
+
+# In[2]:
+
+
+import pandas as pd
+Location = "datasets/axisdata.csv"
+df = pd.read_csv(Location)
+df.head()
+df.corr()
+
+
+# In[22]:
+
+
+import pandas as pd
+
+Location = "datasets/axisdata.csv"
+df = pd.read_csv(Location)
+df.head()
+
+
+# In[38]:
+
+
+import pandas as pd
+Location = "datasets/axisdata.csv"
+df = pd.read_csv(Location)
+df.hist()
+
+
+
+# In[43]:
+
+
+df.hist(column ='Hours Worked', by='Cars Sold')
+
+
+# In[44]:
+
+
+df.hist(column = 'Cars Sold', by='Gender')
+
+
+# In[ ]:
+
+
+
+
